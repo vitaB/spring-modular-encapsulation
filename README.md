@@ -17,5 +17,5 @@ CREATE TABLE moduleb.entityb (
 ```
 
 ## publish modules to maven local
-* execute 'gradle publishToMavenLocal' in moduleA directory
-* execute 'gradle publishToMavenLocal' in moduleB directory
+* execute `gradle publishToMavenLocal` in moduleA directory
+* execute `gradle publishToMavenLocal` in moduleB directory
