@@ -1,0 +1,11 @@
+App/build
+App/.idea
+App/.gradle
+
+ModuleA/build
+ModuleA/.idea
+ModuleA/.gradle
+
+ModuleB/build
+ModuleB/.idea
+ModuleB/.gradle
