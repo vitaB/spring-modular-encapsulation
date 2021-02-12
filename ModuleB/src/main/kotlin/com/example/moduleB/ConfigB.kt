@@ -33,16 +33,12 @@ class ConfigurationModuleB {
     fun moduleBDataSource(): DataSource = DataSourceBuilder.create().build()
 
     @Bean(name = ["moduleBEntityManager"])
-    fun moduleBEntityManager(@Qualifier("moduleBJPAProperties")
-                             properties: JpaProperties,
-                             @Qualifier("moduleBDataSource")
-                             dataSource: DataSource): LocalContainerEntityManagerFactoryBean {
+    fun moduleBEntityManager(): LocalContainerEntityManagerFactoryBean {
         val em = LocalContainerEntityManagerFactoryBean()
-        em.dataSource = dataSource
+        em.dataSource = moduleBDataSource()
         em.setPackagesToScan("com.example.moduleB")
-        val vendorAdapter = HibernateJpaVendorAdapter()
-        em.jpaVendorAdapter = vendorAdapter
-        em.setJpaPropertyMap(properties.properties)
+        em.jpaVendorAdapter = HibernateJpaVendorAdapter()
+        em.setJpaPropertyMap(moduleBJPAProperties().properties)
         return em
     }
 
